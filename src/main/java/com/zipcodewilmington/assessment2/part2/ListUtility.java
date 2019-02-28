@@ -8,6 +8,7 @@ public class ListUtility {
     List<Integer> list = new ArrayList<>();
 
     public Boolean add(Integer i) {
+        //Null pointer exception
         if (i == null) return list.add(null);
 
         return list.add(i);
