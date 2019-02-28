@@ -5,8 +5,9 @@ public class WuTangConcatenator {
     private Integer input;
 
     public WuTangConcatenator(Integer input) {
-    }
         this.input = input;
+    }
+
 
     public Boolean isWu() {
 

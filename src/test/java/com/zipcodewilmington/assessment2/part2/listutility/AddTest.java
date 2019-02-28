@@ -33,7 +33,7 @@ public class AddTest {
 
         // when
         utility.add(valueToAdd);
-
+        System.out.println("");
         // then
         Assert.assertTrue(utility.contains(valueToAdd));
     }

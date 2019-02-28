@@ -1,19 +1,22 @@
 package com.zipcodewilmington.assessment2.part1;
 
+import java.lang.Math;
+
 public class IntegerArrayUtilities {
     public Boolean hasEvenLength(Integer[] array) {
 
-        return array.length % 2 == 0);
+        return array.length % 2 == 0;
     }
 
     public Integer[] range(int start, int stop) {
+        if(start > stop) return null;
+        int range = Math.abs(start - stop) + 1;
+        Integer[] intArray = new Integer[range];
 
-        Integer[] intArray = new Integer[start - stop];
-        Integer count = 0;
-        for (i = start; i < stop; i ++) {
-            intArray[i] = i;
-            count ++;
+        for (int i = 0; i < range; i++) {
+            intArray[i] = start + i;
         }
+
         return intArray;
     }
 
