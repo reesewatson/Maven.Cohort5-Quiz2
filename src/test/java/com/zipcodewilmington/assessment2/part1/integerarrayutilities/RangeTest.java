@@ -43,13 +43,12 @@ public class RangeTest {
     }
 
 
-
-    private void test(int start, int stop, Integer[] expected) {
+    private void test(int start, int stop, Object[] expected) {
         // given
         IntegerArrayUtilities integerArrayUtilities = new IntegerArrayUtilities();
 
         // when
-        Integer[] actual = integerArrayUtilities.range(start, stop);
+        Object[] actual = integerArrayUtilities.range(start, stop);
 
         // then
         TestUtils.assertArrayEquals(expected, actual);

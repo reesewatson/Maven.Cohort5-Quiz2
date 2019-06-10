@@ -1,17 +1,17 @@
 package com.zipcodewilmington.assessment2.part2;
 
-import java.util.List;
-import java.util.ArrayList;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class ListUtility {
 
     List<Integer> list = new ArrayList<>();
 
-    public Boolean add(Integer i) {
+    public Boolean add(Object i) {
         //Null pointer exception
         if (i == null) return list.add(null);
 
-        return list.add(i);
+        return list.add((Integer) i);
     }
 
     public Integer size() {
@@ -23,16 +23,8 @@ public class ListUtility {
     }
 
     public List<Integer> getUnique() {
-        //Pay attention to return type (looking for unique values in List<Integer>), start there
-        //Use for each loop to add each unique index to arrList
-        //If arrList does not contain(i), add(i)
-        List<Integer> arrList = new ArrayList<>();
-        for (Integer i : list) {
-            if (!arrList.contains(i)) {
-                arrList.add(i);
-            }
-        }
-        return arrList;
+        Set<Integer> set = new HashSet(list);
+        return set.stream().collect(Collectors.toList());
     }
 
     public String join() {
@@ -49,7 +41,7 @@ public class ListUtility {
     }
 
     public Integer mostCommon() {
-        return null;
+        return (Integer) ArrayUtility.mostCommon(list.toArray(new Integer[0]));
     }
 
     public Boolean contains(Integer valueToAdd) {

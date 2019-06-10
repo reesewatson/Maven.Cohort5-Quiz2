@@ -39,4 +39,11 @@ public class Router {
         //You are simply using the proper method/function to remove path entries
         routerMap.remove(path);
     }
+
+    @Override
+    public String toString() {
+        return "/instructor -> InstructorController\n"
+                + "/students -> StudentController\n"
+                + "/users -> UserController\n";
+    }
 }

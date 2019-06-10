@@ -8,38 +8,38 @@ public class MostCommonTest {
 
     @Test
     public void test1() {
-        Integer mostCommonValue = 8193;
-        Integer[] valuesToAdd = {mostCommonValue, mostCommonValue, mostCommonValue, 10};
+        Object mostCommonValue = 8193;
+        Object[] valuesToAdd = {mostCommonValue, mostCommonValue, mostCommonValue, 10};
         test(valuesToAdd, mostCommonValue);
     }
 
     @Test
     public void test2() {
-        Integer mostCommonValue = 6783;
-        Integer[] valuesToAdd = {mostCommonValue, mostCommonValue, mostCommonValue, 10};
+        Object mostCommonValue = 6783;
+        Object[] valuesToAdd = {mostCommonValue, mostCommonValue, mostCommonValue, 10};
         test(valuesToAdd, mostCommonValue);
     }
 
 
     @Test
     public void test3() {
-        Integer mostCommonValue = null;
-        Integer[] valuesToAdd = {mostCommonValue, mostCommonValue, mostCommonValue, 10};
+        Object mostCommonValue = null;
+        Object[] valuesToAdd = {mostCommonValue, mostCommonValue, mostCommonValue, 10};
         test(valuesToAdd, mostCommonValue);
     }
 
     @Test
     public void test4() {
-        Integer mostCommonValue = Integer.MAX_VALUE;
-        Integer[] valuesToAdd = {mostCommonValue, mostCommonValue, mostCommonValue, 10};
+        Object mostCommonValue = Integer.MAX_VALUE;
+        Object[] valuesToAdd = {mostCommonValue, mostCommonValue, mostCommonValue, 10};
         test(valuesToAdd, mostCommonValue);
     }
 
 
-    public void test(Integer[] valuesToAdd, Integer mostCommonValue) {
+    public void test(Object[] valuesToAdd, Object mostCommonValue) {
         //Given
         ListUtility utility = new ListUtility();
-        for (Integer valueToAdd : valuesToAdd) {
+        for (Object valueToAdd : valuesToAdd) {
             utility.add(valueToAdd);
         }
 

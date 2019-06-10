@@ -7,6 +7,8 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.Assert.fail;
+
 public class GetUniqueTest {
 
     @Test
@@ -26,7 +28,7 @@ public class GetUniqueTest {
     @Test
     public void test3() {
         Integer[] valuesToAdd = {1, 1, 2, 3, 4, 4, 6};
-        Integer[] uniqueValues = {1, 2, 3, 4};
+        Integer[] uniqueValues = {2, 3, 6};
         test(valuesToAdd, uniqueValues);
     }
 
@@ -49,7 +51,7 @@ public class GetUniqueTest {
 
     private static void assertEquals(List<Integer> expected, List<Integer> actual) {
         if (expected.size() != actual.size()) {
-            Assert.fail();
+            fail();
         }
 
         for(int i = 0; i < expected.size(); i++) {

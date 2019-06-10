@@ -1,57 +1,64 @@
 package com.zipcodewilmington.assessment2.part2;
 
-import java.util.TreeMap;
-import java.util.Map;
+import com.sun.tools.javac.util.ArrayUtils;
+
+import java.lang.reflect.Array;
+import java.util.*;
+import java.util.stream.IntStream;
 
 public class ArrayUtility {
-    public Integer[] merge(Integer[] array1, Integer[] array2) {
-
-        Integer [] newArray = new Integer[array1.length + array2.length];
-        for (int i = 0; i < array1.length; i ++) {
-            newArray[i] += array1[i];
-        }
-        for (int i = 0; i < array2.length; i ++) {
-            newArray[i + array1.length] += array2[i];
-        }
-        return newArray;
+    public Object[] merge(Object[] array1, Object[] array2) {
+        List list = new ArrayList(Arrays.asList(array1));
+        list.addAll(Arrays.asList(array2));
+        return list.toArray();
     }
+
 
     public Integer[] rotate(Integer[] array, Integer index) {
 
-        Integer [] newArray = new Integer[array.length];
+        Integer[] newArray = new Integer[array.length];
         Integer given = 0;
-        for (int i = 0; i < array.length; i ++) {
+        for (int i = 0; i < array.length; i++) {
             if (i - index < 0) {
                 newArray[array.length - index + i] = array[i];
             } else {
                 newArray[i - index] = array[i];
             }
         }
-            return newArray;
+        return newArray;
     }
 
     public Integer countOccurrence(Integer[] array1, Integer[] array2, Integer valueToEvaluate) {
-
-
-//            new Integer[array1.length + array2.length];
-            Integer count = 0;
-
-//            for (int i = 0; i < result.length; i++)
-//            {
-//                Integer currentInt = result[i];;
-//
-//                if (currentInt == result[i])
-//                {
-//                    count++;
-//                }
-//            }
-            return count;
+        if (valueToEvaluate.equals(null)) {
+            return null; }
+        Integer count = 0;
+        List list = new ArrayList(Arrays.asList(array1));
+        list.addAll(Arrays.asList(array2));
+        for (Object nums : list) {
+            if (nums.equals(valueToEvaluate)) {
+                count++;
+            }
+        } return count;
     }
 
-    public Integer mostCommon(Integer[] array) {
+    public static Integer countFrequency(Integer[] arr, Integer value) {
+        Integer count = 0;
+        List list = new ArrayList(Arrays.asList(arr));
+        for (Object nums2 : list) {
+            if (nums2.equals(value)) {
+                count++;
+            }
+        } return count;
+    }
 
-        
-
-        return null;
+    public static Integer mostCommon(Integer[] array) {
+        int mostCommon = array[0];
+        int count = (int) countFrequency(array, mostCommon);
+        for (Integer num : array) {
+            if (count < countFrequency(array, num)) {
+                mostCommon = num;
+            }
+        } return mostCommon;
     }
 }
+
