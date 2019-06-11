@@ -20,6 +20,15 @@ public class Router {
         return routerMap.keySet().size();
     }
 
+    public String getPath(String controller){
+        for(Map.Entry<String, String> entry: routerMap.entrySet()){
+            if(entry.getValue().equals(controller)){
+                return entry.getKey();
+            }
+        }
+        return null;
+    }
+
     public String getController(String path) {
         //Think "getters", there is a return type
         //Use proper method/function to yield controller path

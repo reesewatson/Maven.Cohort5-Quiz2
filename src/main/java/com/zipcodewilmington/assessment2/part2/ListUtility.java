@@ -24,6 +24,9 @@ public class ListUtility {
 
     public List<Integer> getUnique() {
         Set<Integer> set = new HashSet(list);
+        for(Integer i : set){
+            System.out.println(i);
+        }
         return set.stream().collect(Collectors.toList());
     }
 

@@ -43,16 +43,16 @@ public class ArrayUtility {
 
     public static Integer countFrequency(Integer[] arr, Integer value) {
         Integer count = 0;
-        List list = new ArrayList(Arrays.asList(arr));
-        for (Object nums2 : list) {
-            if (nums2.equals(value)) {
+        List<Integer> list = new ArrayList(Arrays.asList(arr));
+        for (Integer nums2 : list) {
+            if (nums2 == value) {
                 count++;
             }
         } return count;
     }
 
     public static Integer mostCommon(Integer[] array) {
-        int mostCommon = array[0];
+        Integer mostCommon = array[0];
         int count = (int) countFrequency(array, mostCommon);
         for (Integer num : array) {
             if (count < countFrequency(array, num)) {

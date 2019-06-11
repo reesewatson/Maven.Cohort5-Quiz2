@@ -9,8 +9,8 @@ public class IntegerArrayUtilities {
     }
 
     public Object[] range(int start, int stop) {
-        if (stop - start == 0) {
-            return null;
+        if (stop - start <= 0) {
+            return new Object[0];
         }
         int length = (start - stop) + 1;
         return (Object[]) IntStream.range(start, stop + 1).boxed().toArray();

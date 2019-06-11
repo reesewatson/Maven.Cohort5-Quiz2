@@ -38,7 +38,7 @@ public class RangeTest {
     public void test4() {
         int start = 10;
         int stop = 0;
-        Integer[] expected = null;
+        Integer[] expected = {};
         test(start, stop, expected);
     }
 

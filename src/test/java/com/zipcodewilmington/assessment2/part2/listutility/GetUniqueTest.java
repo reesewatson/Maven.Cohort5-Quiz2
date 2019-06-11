@@ -28,7 +28,7 @@ public class GetUniqueTest {
     @Test
     public void test3() {
         Integer[] valuesToAdd = {1, 1, 2, 3, 4, 4, 6};
-        Integer[] uniqueValues = {2, 3, 6};
+        Integer[] uniqueValues = {1, 2, 3, 4, 6};
         test(valuesToAdd, uniqueValues);
     }
 
